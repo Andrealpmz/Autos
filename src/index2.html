@@ -1,0 +1,54 @@
+  <!-- SECCION NAVEGACIÓN-->
+  <nav class="navbar navbar-dark bg-dark navbar-expand-md fixed-top">
+    <div class="container">      
+      <a href="#" class="navbar-brand">
+        <strong>Autos usados</strong> </a>
+
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+      data-target="#menu-principal" aria-controls="menu-principal" aria-expanded="false"
+      aria-label="Desplegar menú de navegación">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="menu-principal">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a href="app.component.html" class="nav-link active">Crear vendedor</a></li>
+        <li class="nav-item"><a href="index2.html" class="nav-link">Crear clinte</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Listar vendedores</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Listar clientes</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Listar sedes</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <div class="formularioRegistro">
+    <h2>Crear vendedor</h2>
+    <form [formGroup]="vendedorForm" (ngSubmit)="guardar()">
+      <div class="form-group">
+      <label>Nombre</label>
+      <input type="text" formControlName="nombre" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Apellido</label>
+        <input type="text" formControlName="apellido" class="form-control">
+        </div>
+        <div class="form-group">
+          <label>Cedula</label>
+          <input type="number" formControlName="cedula" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Sede a la que pertenece</label>
+            <select name="sede" id="sede" formControlName="sede" class="form-control">
+              <option value="item.id" *ngFor="let item of sede">{{item.nombre}}</option>
+            </select>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-danger">Guardar cliente</button>
+    </form>
+  </div>
+
+
+
+
+<router-outlet></router-outlet>

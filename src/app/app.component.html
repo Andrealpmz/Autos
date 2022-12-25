@@ -1,0 +1,261 @@
+  <!-- SECCION NAVEGACIÓN-->
+  <nav class="navbar navbar-dark bg-dark navbar-expand-md fixed-top">
+    <div class="container">      
+      <a href="#" class="navbar-brand">
+        <strong>Autos usados</strong> </a>
+
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+      data-target="#menu-principal" aria-controls="menu-principal" aria-expanded="false"
+      aria-label="Desplegar menú de navegación">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="menu-principal">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a href="#" class="nav-link active">Registros</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <div class="formularioRegistro">
+    <h2>Crear vendedor</h2>
+    <form [formGroup]="vendedorForm" (ngSubmit)="guardar()">
+      <div class="form-group">
+      <label>Nombre</label>
+      <input type="text" formControlName="nombre" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Apellido</label>
+        <input type="text" formControlName="apellido" class="form-control">
+        </div>
+        <div class="form-group">
+          <label>Cedula</label>
+          <input type="number" formControlName="cedula" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Sede a la que pertenece</label>
+            <select name="sede" id="sede" formControlName="sede" class="form-control">
+              <option [ngValue]="item" *ngFor="let item of sede">{{item.nombre}}</option>
+            </select>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-danger">Guardar vendedor</button>
+
+            <br>
+    </form>
+  </div>
+
+  <div class="formularioRegistro">
+    <h2>Vendedores activos</h2>
+    <table class="table">
+<thead>
+  <tr>
+    <th>ID</th>
+    <th>Cedula</th>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Sede</th>
+    <th>Configurar</th>
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor="let item of vendedor">
+    <td>{{item.id}}</td>
+    <td>{{item.cedula}}</td>
+    <td>{{item.nombre}}</td>
+    <td>{{item.apellido}}</td>
+    <td>{{item.sede.nombre}}</td>
+    <td>
+      <button type="button" class="btn btn-success" (click)="editar(item)">Editar</button>
+      <button type="button" class="btn btn-warning" (click)="eliminar(item)">Eliminar</button>
+    </td>
+  </tr>
+  
+</tbody>
+    </table>
+  </div>
+
+
+  <br>
+
+  <div class="formularioRegistro">
+    <h2>Crear cliente</h2>
+    <form [formGroup]="clienteForm" (ngSubmit)="guardarCli()">
+      <div class="form-group">
+      <label>Nombre</label>
+      <input type="text" formControlName="nombre" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Apellido</label>
+        <input type="text" formControlName="apellido" class="form-control">
+        </div>
+        <div class="form-group">
+          <label>Cedula</label>
+          <input type="number" formControlName="cedula" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Vehiculo que pertenece</label>
+            <select name="vehiculo" id="vehiculo" formControlName="vehiculo" class="form-control">
+              <option [ngValue]="item" *ngFor="let item of vehiculo">{{item.marca}}</option>
+            </select>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-danger" >Guardar cliente</button>
+
+            <br>
+    </form>
+  </div>
+
+  <div class="formularioRegistro">
+    <h2>Clientes actuales</h2>
+    <table class="table">
+<thead>
+  <tr>
+    <th>ID</th>
+    <th>Cedula</th>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>vehiculo</th>
+    <th>Configurar</th>
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor="let item of cliente">
+    <td>{{item.id}}</td>
+    <td>{{item.cedula}}</td>
+    <td>{{item.nombre}}</td>
+    <td>{{item.apellido}}</td>
+    <td>{{item.vehiculo.marca}}</td>
+    <td>
+      <button type="button" class="btn btn-success" (click)="editarCli(item)">Editar</button>
+      <button type="button" class="btn btn-warning" (click)="eliminarCli(item)">Eliminar</button>
+    </td>
+  </tr>
+  
+</tbody>
+    </table>
+  </div>
+
+  <br>
+
+  <div class="formularioRegistro">
+    <h2>Crear vendedor</h2>
+    <form [formGroup]="vendedorForm" (ngSubmit)="guardar()">
+      <div class="form-group">
+      <label>Nombre</label>
+      <input type="text" formControlName="nombre" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Apellido</label>
+        <input type="text" formControlName="apellido" class="form-control">
+        </div>
+        <div class="form-group">
+          <label>Cedula</label>
+          <input type="number" formControlName="cedula" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Sede a la que pertenece</label>
+            <select name="sede" id="sede" formControlName="sede" class="form-control">
+              <option [ngValue]="item" *ngFor="let item of sede">{{item.nombre}}</option>
+            </select>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-danger">Guardar vendedor</button>
+
+            <br>
+    </form>
+  </div>
+
+  <div class="formularioRegistro">
+    <h2>Vendedores activos</h2>
+    <table class="table">
+<thead>
+  <tr>
+    <th>ID</th>
+    <th>Cedula</th>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Sede</th>
+    <th>Configurar</th>
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor="let item of vendedor">
+    <td>{{item.id}}</td>
+    <td>{{item.cedula}}</td>
+    <td>{{item.nombre}}</td>
+    <td>{{item.apellido}}</td>
+    <td>{{item.sede.nombre}}</td>
+    <td>
+      <button type="button" class="btn btn-success" (click)="editar(item)">Editar</button>
+      <button type="button" class="btn btn-warning" (click)="eliminar(item)">Eliminar</button>
+    </td>
+  </tr>
+  
+</tbody>
+    </table>
+  </div>
+
+
+  <br>
+
+  <div class="formularioRegistro">
+    <h2>Crear vehículos</h2>
+    <form [formGroup]="vehiculoForm" (ngSubmit)="guardarVeh()">
+      <div class="form-group">
+      <label>Marca</label>
+      <input type="text" formControlName="marca" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Color</label>
+        <input type="text" formControlName="color" class="form-control">
+        </div>
+          <div class="form-group">
+            <label>Placa</label>
+            <input type="number" formControlName="placa" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>valor</label>
+              <input type="number" formControlName="valor" class="form-control">
+              </div>
+            <br>
+            <button type="submit" class="btn btn-danger" >Guardar vehículo</button>
+
+            <br>
+    </form>
+  </div>
+
+  <div class="formularioRegistro">
+    <h2>Vehículos usados</h2>
+    <table class="table">
+<thead>
+  <tr>
+    <th>ID</th>
+    <th>Marca</th>
+    <th>Color</th>
+    <th>Placa</th>
+    <th>Valor USD</th>
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor="let item of vehiculo">
+    <td>{{item.id}}</td>
+    <td>{{item.marca}}</td>
+    <td>{{item.color}}</td>
+    <td>{{item.placa}}</td>
+    <td>{{item.valor}}</td>
+    <td>
+      <button type="button" class="btn btn-success" (click)="editarVeh(item)">Editar</button>
+      <button type="button" class="btn btn-warning" (click)="eliminarVeh(item)">Eliminar</button>
+    </td>
+  </tr>
+  
+</tbody>
+    </table>
+  </div>
+
+
+
+
+<router-outlet></router-outlet>
